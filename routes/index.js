@@ -6,7 +6,7 @@ const router = require('express').Router()
 //landing page
 router.get(`/`, Controller.LandingPage)
 
-//user interface
+// //user interface
 router.get(`/register`, UserController.register)
 router.get(`/login`, UserController.loginForm)
 

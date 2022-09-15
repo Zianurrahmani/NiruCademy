@@ -1,41 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Course</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Course</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(156, 174, 252);
+    }
+    .container {
+      width: 50%;
+      height: fit-content;
+      padding: 50px;
+      border-radius: 12px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+    }
+    .form-addCourse>input,
+    .form-addCourse>select {
+      margin: 5px 0px;
+      padding: 5px;
+      width: 100%;
+      height: 40px;
+      border-radius: 5px;
+      border: solid 1px gray;
+    }
+    form div {
+      display: flex; 
+      justify-content: center;
+    }
+    input[type=button], input[type=submit]{
+      width: 100px;
+      height: 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: rgb(80, 118, 222);
+    }
+  </style>
 </head>
-<h1>Add New Course</h1>
+
 <body>
-    <form action="/course/add" method="post">
-        <p>
-            Name: <br>
-            <input type="text" name="name">
-        </p>
-        <p>
-            Description: <br>
-            <textarea type="text" name="description"></textarea>
-        </p>
-        <p>
-            Duration: <br>
-            <input type="number" name="duration">
-        </p>
-        <p>
-            Price: <br>
-            <input type="number" name="price">
-        </p>
-        <p>
-            Category: <br>
-            <select name="CategoryId">
-                    <option disabled selected>--select category--</option>
-                <% categories.forEach(el => { %>
-                    <option value="<%= el.id %>"><%= el.name %></option>
-                <% }) %>
-            </select>
-        </p>
-        <button type="submit">Add Course</button>
+  
+  <div class="container">
+    <h2>Add New Course</h2><br>
+    <form class="form-addCourse" action="/course/add" method="post">
+      <label>Course Name:</label><br>
+      <input type="text" placeholder="name" name="name"><br>
+      <label>Description:</label><br>
+      <input type="textarea" placeholder="input brief description" name="description"><br>
+      <label>Duration:</label><br>
+      <input type="number" placeholder="course duration" name="duration"><br>
+      <label>Category:</label><br>
+        <select name="CategoryId">
+            <option disabled selected>--select category--</option>
+            <% categories.forEach(el => { %>
+            <option value="<%= el.id %>"><%= el.name %></option>
+            <% }) %>
+        </select>
+      <label>Price:</label><br>
+      <input type="number" placeholder="input course price, should be greater than 50 coins" name="price"><br>
+      <label>Video Link:</label><br>
+      <input type="text" placeholder="input youtube video embed link" name="link"><br>
+      <div>
+        <a href="/home" style="text-decoration: none;"><input type="button" value="Cancel"></a>
+        <input type="submit" value="Submit">
+      </div>
     </form>
-    <a href="/home">Cancel</a>
+  </div>
 </body>
 </html>
