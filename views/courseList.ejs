@@ -16,6 +16,7 @@
             <tr>
                 <th>NO</th>
                 <th>Name</th>
+                <th>Description</th>
                 <th>Category</th>
                 <th>Price</th>
                 <th>Action</th>
@@ -26,11 +27,12 @@
                 <tr>
                     <td><%= i + 1 %></td>
                     <td><%= el.name %></td>
+                    <td><%= el.description %></td>
                     <td><%= el.Category.name %></td>
                     <td><%= el.formattedPrice %></td>
                     <td>
                         <a href="">Enroll</a> |
-                        <a href="">Detail</a>
+                        <a href="/course/<%= el.id %>">Start Course</a>
                     </td>
                 </tr>
             <% }) %>

@@ -14,5 +14,8 @@ router.get(`/login`, UserController.loginForm)
 router.get(`/home`, CourseController.home)
 router.get(`/course/add`, CourseController.addCourse)
 router.post(`/course/add`, CourseController.createCourse)
+router.get(`/course/edit`, CourseController.createCourse)
+router.post(`/course/edit`, CourseController.createCourse)
+router.get(`/course/:id`, CourseController.courseDetail)
 
 module.exports = router

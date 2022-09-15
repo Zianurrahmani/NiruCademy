@@ -32,5 +32,22 @@ class CourseController {
             res.send(err)
         })
     }
+    static courseDetail(req,res) {
+        const id = +req.params.id
+        Video.findOne({
+            include: Course,
+            where: {
+                CourseId: id
+            }
+        })
+        .then(video => {
+            // res.send(video)
+            res.render('startCourse',{video})
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+    
 }
 module.exports = CourseController
