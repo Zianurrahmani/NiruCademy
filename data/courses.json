@@ -1,0 +1,31 @@
+[{
+    "name": "Memasak kue",
+    "description": "Belajar dan tutorial membuat kue dengan brown sugar",
+    "duration": 15,
+    "price": 54,
+    "CategoryId": 1
+  }, {
+    "name": "Belajar Menanam",
+    "description": "Metode menanam efektif ala rumahan",
+    "duration": 17,
+    "price": 79,
+    "CategoryId": 2
+  }, {
+    "name": "Intro Javascript",
+    "description": "Belajar mengenal javascript dan looping",
+    "duration": 17,
+    "price": 69,
+    "CategoryId": 2
+  }, {
+    "name": "Melipat Baju",
+    "description": "Tutorial melipat baju efektif dan cepat",
+    "duration": 10,
+    "price": 80,
+    "CategoryId": 1
+  }, {
+    "name": "Belajar Menabung",
+    "description": "Tips and Trick menabung di usia muda",
+    "duration": 15,
+    "price": 92,
+    "CategoryId": 1
+  }]
