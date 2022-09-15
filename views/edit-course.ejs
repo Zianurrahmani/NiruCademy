@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Course</title>
+</head>
+<body>
+    <h1>Edit Course: <%= courses.name %></h1>
+    <form action="/course/<%= courses.id %>/edit" method="post">
+        <p>
+            Name: <br>
+            <input type="text" name="name" value="<%= courses.name %>">
+        </p>
+        <p>
+            Description: <br>
+            <textarea type="text" name="description" value="<%= courses.description %>"><%= courses.description %></textarea>
+        </p>
+        <p>
+            Duration: <br>
+            <input type="number" name="duration" value="<%= courses.duration %>">
+        </p>
+        <p>
+            Price: <br>
+            <input type="number" name="price" value="<%= courses.price %>">
+        </p>
+        <p>
+            Category: <br>
+            <select name="CategoryId">
+                    <option disabled selected><%= courses.Category.name %></option>
+            </select>
+        </p>
+        <p>
+            Video Link: <br>
+            <% if (courses.Video === null) { %>
+                <input type="text" name="link">
+                <% } else { %>
+                <input type="text" name="link" value="<%= courses.Video.link %>">
+            <% } %> 
+        </p>
+        <button type="submit">Edit Course</button>
+    </form>
+    <p>
+        <a href="/home">Back</a>
+    </p>
+</body>
+</html>

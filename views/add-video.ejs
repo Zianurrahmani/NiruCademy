@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Video</title>
+</head>
+<body>
+    <h1>Add Video for Course: <%= courses.name %></h1>
+    <form action="/course/<%= courses.id %>/add-video" method="post">
+        <p>
+            Link: <br>
+            <input type="text" name="link">
+        </p>
+        <button type="submit">submit</button>
+    </form>
+    <a href="/course/<%= courses.id %>">back</a>
+</body>
+</html>
