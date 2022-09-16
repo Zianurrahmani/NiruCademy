@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Course</title>
+    <style>
+        * {
+          margin: 0px;
+          padding: 0px;
+          box-sizing: border-box;
+        }
+        body {
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgb(156, 174, 252);
+        }
+        .container {
+          width: 50%;
+          height: fit-content;
+          padding: 50px;
+          border-radius: 12px;
+          background-color: #fff;
+          box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+        }
+        .form-editCourse>input,
+        .form-editCourse>select {
+          margin: 5px 0px;
+          padding: 5px;
+          width: 100%;
+          height: 40px;
+          border-radius: 5px;
+          border: solid 1px gray;
+        }
+        form div {
+          display: flex; 
+          justify-content: center;
+        }
+        input[type=button], input[type=submit]{
+          width: 100px;
+          height: 30px;
+          margin: 10px;
+          border: none;
+          border-radius: 5px;
+          background-color: rgb(80, 118, 222);
+        }
+      </style>
+</head>
+<body>
+<div class="container">
+    <h1>Edit Course: <%= courses.name %></h1><br>
+    <form class="form-editCourse" action="/course/<%= courses.id %>/edit" method="post">
+        <label>Course Name:</label><br>
+        <input type="text" name="name" value="<%= courses.name %>"><br>
+        
+        <label>Description:</label><br>
+        <input type="textarea" name="description" value="<%= courses.description %>"><br>
+        
+        <label>Duration:</label><br>
+        <input type="number" name="duration" value="<%= courses.duration %>"><br>
+        
+        <label>Price:</label><br>
+        <input type="number" name="price" value="<%= courses.price %>"><br>
+        
+        <label>Category:</label><br>
+            <select name="CategoryId">
+                    <option disabled selected><%= courses.Category.name %></option>
+            </select><br>
+        
+        <label>Video Link:</label><br>
+            <% if (courses.Video === null) { %>
+                <input type="text" name="link">
+                <% } else { %>
+                <input type="text" name="link" value="<%= courses.Video.link %>">
+            <% } %> 
+        <br>
+        <button type="submit">Edit Course</button>
+    </form>
+    <br>
+    <p>
+        <a href="/home">Back</a>
+    </p>
+</div>
+    
+</body>
+</html>

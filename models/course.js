@@ -1,7 +1,8 @@
 'use strict';
 const {
   Model
-} = require('sequelize');
+} = require('sequelize')
+const formatedDate = require('../helper/formatedDate')
 module.exports = (sequelize, DataTypes) => {
   class Course extends Model {
     /**
@@ -16,8 +17,8 @@ module.exports = (sequelize, DataTypes) => {
       Course.hasOne(models.Video)
     }
 
-    get formattedPrice() {
-      return this.price = `${this.price} points`
+    get updatedDate() {
+      return formatedDate(this.updatedAt)
     }
   }
   Course.init({
