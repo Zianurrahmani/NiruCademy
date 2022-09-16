@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       Course.hasOne(models.Video)
     }
 
-    get updatedDate() {
+    updatedDate() {
       return formatedDate(this.updatedAt)
     }
   }
