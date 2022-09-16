@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CourseList</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course List</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
-<h1>Course List</h1>
 <body>
+
+<h1 style="text-align: center;">Course List</h1>
+<br>
+
     <form action="/home" method="get">
         <input type="text" name="search">
         <button type="submit">search</button>
@@ -15,7 +19,7 @@
     <p>
         <a href="/course/add">Add New Course</a>
     </p>
-    <table border="1">
+    <table class="table table-bordered table-stripped">
         <thead>
             <tr>
                 <th>NO</th>
@@ -46,5 +50,6 @@
     <p>
         <a href="/logout">logout</a>
     </p>
+
 </body>
 </html>
